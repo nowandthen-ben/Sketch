@@ -58,3 +58,8 @@ body {
 .pixel.darkened {
     background-color: black;
 }
+
+button {
+    padding: 5px;
+    margin: 20px;
+}
