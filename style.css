@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0px;
+}
+
+.frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 500px;
+    background-color: brown;
+    border-radius: 10px;
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 400px;
+    background-color: lightslategrey;
+    border-radius: 5px;
+}
+
+.spacer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 5px;
+
+}
+
+.pixelRow {
+    display: flex;
+    flex-grow: 1;
+}
+
+.pixel {
+    flex-grow: 1;
+    margin: 1px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.pixel.darkened {
+    background-color: black;
+}
