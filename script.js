@@ -17,7 +17,7 @@ function gridInit(size) {
 }
 
 function colorize(e) {
-    if (drawMode == 'Draw') {
+    if (drawMode == 1) {
         e.target.classList.add('darkened');
     } else {
         e.target.classList.remove('darkened');
@@ -37,19 +37,22 @@ function reset() {
         x = prompt('Set grid to what size? (1-40)');
     }
     gridInit(x);
+    drawMode = 1;
+    modeBtn.textContent = 'Mode: Draw';
 }
-
+let drawMode = 1;
 const modeBtn = document.querySelector('#mode');
 modeBtn.addEventListener('click', toggleMode);
+modeBtn.innerHTML = drawMode;
 
-let drawMode = 'Draw';
+
 
 function toggleMode() {
-    if (drawMode == 'Draw') {
-        drawMode = 'Erase';
-        modeBtn.innerHTML = `Mode: ${drawMode}`;
-    } else if (drawMode == 'Erase') {
-        drawMode = 'Draw';
-        modeBtn.innerHTML = `Mode: ${drawMode}`;
+    if (drawMode == 1) {
+        drawMode = 0;
+        // modeBtn.textContent = 'Mode: Erase';
+    } else if (drawMode == 0) {
+        drawMode = 1;
+        // modeBtn.textContent = 'Mode: Draw';
     }
 }
