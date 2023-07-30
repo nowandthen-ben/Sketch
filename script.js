@@ -43,16 +43,15 @@ function reset() {
 let drawMode = 1;
 const modeBtn = document.querySelector('#mode');
 modeBtn.addEventListener('click', toggleMode);
-modeBtn.innerHTML = drawMode;
 
 
 
 function toggleMode() {
     if (drawMode == 1) {
         drawMode = 0;
-        // modeBtn.textContent = 'Mode: Erase';
+        modeBtn.textContent = 'Mode: Erase';
     } else if (drawMode == 0) {
         drawMode = 1;
-        // modeBtn.textContent = 'Mode: Draw';
+        modeBtn.textContent = 'Mode: Draw';
     }
 }
