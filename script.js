@@ -17,8 +17,8 @@ function gridInit(size) {
 }
 
 let activeBrush = false;
-const window = document.querySelector('.window');
-window.onmousedown = () => (activeBrush = true);
+const frame = document.querySelector('.frame');
+document.body.onmousedown = () => (activeBrush = true);
 document.body.onmouseup = () => (activeBrush = false);
 
 function colorize(e) {
