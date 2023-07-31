@@ -16,8 +16,16 @@ function gridInit(size) {
     }
 }
 
+let activeBrush = false;
+const window = document.querySelector('.window');
+window.onmousedown = () => (activeBrush = true);
+document.body.onmouseup = () => (activeBrush = false);
+
 function colorize(e) {
-    if (drawMode == 1) {
+    if (activeBrush !== true) {
+        return;
+    };
+    if (drawMode == true) {
         e.target.classList.add('darkened');
     } else {
         e.target.classList.remove('darkened');
@@ -40,11 +48,10 @@ function reset() {
     drawMode = 1;
     modeBtn.textContent = 'Mode: Draw';
 }
+
 let drawMode = 1;
 const modeBtn = document.querySelector('#mode');
 modeBtn.addEventListener('click', toggleMode);
-
-
 
 function toggleMode() {
     if (drawMode == 1) {
